@@ -23,20 +23,20 @@ app.post('/form', async (req,res)=>{
     console.log(form);
 });
 
-// app.post('/singup',async(req,res)=>{
-//     let Email = req.body.email;
-//     let EmailErr = "";
-//     if(Email.includes("@gmail.com")== false){
-//         EmailErr = "Plase valid Email";
-//         res.send(EmailErr);
-//     }
-//     else{
-//         let data =  await new userSchema(req.body)
-//         let result = await data.save();
-//         console.log(result);
-//         res.send(result);
-//     } 
-// });
+app.post('/singup',async(req,res)=>{
+    let Email = req.body.email;
+    let EmailErr = "";
+    if(Email.includes("@gmail.com")== false){
+        EmailErr = "Plase valid Email";
+        res.send(EmailErr);
+    }
+    else{
+        let data =  await new userSchema(req.body)
+        let result = await data.save();
+        console.log(result);
+        res.send(result);
+    } 
+});
 
 // app.get('/find',async(req,res)=>{ 
 //     let data = await userSchema.find();
@@ -54,8 +54,10 @@ app.post('/form', async (req,res)=>{
 // })
 
 app.get('/',(req,res)=>{
-     res.send('hertyui');
-    console.log("hjhkjhjhkj");
+    res.send("Hellow sarvesh mohammad");
+    console.log("how are you");
 })
+
+
 app.listen(3000);
 
