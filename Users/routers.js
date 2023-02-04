@@ -4,7 +4,7 @@ require('./config');
 const { isValidForm, validators } = require('./helper');
 const userschema = require('./userschema');
 app.use(express.json());
-const userSchema = require('./userschema');
+// const userSchema = require('./userschema');
 
 
 app.post('/form', async (req,res)=>{
@@ -23,20 +23,20 @@ app.post('/form', async (req,res)=>{
     console.log(form);
 });
 
-app.post('/singup',async(req,res)=>{
-    let Email = req.body.email;
-    let EmailErr = "";
-    if(Email.includes("@gmail.com")== false){
-        EmailErr = "Plase valid Email";
-        res.send(EmailErr);
-    }
-    else{
-        let data =  await new userSchema(req.body)
-        let result = await data.save();
-        console.log(result);
-        res.send(result);
-    } 
-});
+// app.post('/singup',async(req,res)=>{
+//     let Email = req.body.email;
+//     let EmailErr = "";
+//     if(Email.includes("@gmail.com")== false){
+//         EmailErr = "Plase valid Email";
+//         res.send(EmailErr);
+//     }
+//     else{
+//         let data =  await new userSchema(req.body)
+//         let result = await data.save();
+//         console.log(result);
+//         res.send(result);
+//     } 
+// });
 
 // app.get('/find',async(req,res)=>{ 
 //     let data = await userSchema.find();
@@ -53,11 +53,10 @@ app.post('/singup',async(req,res)=>{
 //     res.send(data);
 // })
 
-app.get('/',(req,res)=>{
+app.get('/home',(req,res)=>{
     res.send("Hellow sarvesh mohammad");
     console.log("how are you");
 })
 
-
-app.listen(3000);
+app.listen(5000);
 
